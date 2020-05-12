@@ -21,10 +21,12 @@
 			</div>
   </div>
   <br>
+  </header>
 
 <div class="section-row">
 
-{{$isi_post->content}}
+
+{!!$isi_post->content!!}
 </div> 
 @endforeach
 @endsection

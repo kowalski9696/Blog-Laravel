@@ -42,15 +42,19 @@
 </div>
 <div class="form-group">
      <label>Konten</label>
-    <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
  </div>
 <div class="form-group">
      <label>Thumbnail</label>
     <input class='form-control' type="file" name="gambar">
 </div>
 <div class="form-group">
-    <button class="btn btn-primary btn-block">Simpan Kategori</button>
+    <button class="btn btn-primary btn-block">Simpan Post</button>
 </div>
     </form>
 
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script>
+     CKEDITOR.replace( 'content' );
+</script>
 @endsection

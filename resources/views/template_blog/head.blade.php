@@ -52,14 +52,13 @@
 						<a href="index.html" class="logo"><img src="{{asset ('public/frontend/img/logo.png')}}" alt=""></a>
 					</div>
 					<!-- /logo -->
-
 					<!-- search & aside toggle -->
 					<div class="nav-btns">
 						<button class="aside-btn"><i class="fa fa-bars"></i></button>
 						<button class="search-btn"><i class="fa fa-search"></i></button>
 						<div id="nav-search">
-							<form>
-								<input class="input" name="search" placeholder="Enter your search...">
+							<form action="{{route('blog.cari')}}" method="get">
+								<input class="input" name="cari" placeholder="Enter your search...">
 							</form>
 							<button class="nav-close search-close">
 								<span></span>
@@ -76,23 +75,21 @@
 				<div class="container">
 					<!-- nav -->
 					<ul class="nav-menu">
+     <li><a href="{{ url('')}}">Beranda</a></li>
 						<li class="has-dropdown">
-							<a href="index.html">Home</a>
+							<a href="index.html">Category</a>
 							<div class="dropdown">
 								<div class="dropdown-body">
 									<ul class="dropdown-list">
-										<li><a href="category.html">Category page</a></li>
-										<li><a href="blog-post.html">Post page</a></li>
-										<li><a href="author.html">Author page</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-										<li><a href="blank.html">Regular</a></li>
+          @foreach($category_widget as $result1)
+          <li><a href="category.html">{{$result1->name}}</a></li>
+          @endforeach
 									</ul>
 								</div>
 							</div>
 						</li>
 
-						<li><a href="#">Technology</a></li>
+						<li><a href="{{route('blog.list')}}">List Post</a></li>
 						<li><a href="#">Health</a></li>
 						<li><a href="#">Travel</a></li>
 					</ul>
